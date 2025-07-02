@@ -1,0 +1,15 @@
+<resources>
+	<string name="app_name">nim-aos-samples</string>
+	
+	<string name="loading">加载中…</string>
+	<string name="next_page">下一页</string>
+	<string name="request">请求</string>
+	<string name="request_json">入参Json：</string>
+	<string name="clear_result">清除结果</string>
+	<string name="response">请求结果：</string>
+	<string name="finish">完成</string>
+	<string name="record_audio_end">松开结束</string>
+	<string name="record_audio">按住说话</string>
+	<!-- TODO: Remove or change this placeholder text -->
+	<string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="根据ID列表查询消息:" />
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="会话ID:" />
+			
+			<EditText
+					android:id="@+id/et_conversation_id"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1" />
+			
+			<Button
+					android:id="@+id/btn_get_conversation"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="选择会话"
+			/>
+		
+		</LinearLayout>
+		
+		<!-- 消息ID列表输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="消息客户端ID列表:" />
+			
+				<EditText
+						android:id="@+id/et_message_client_ids"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:hint="输入消息客户端ID，多个ID用逗号分隔"
+						android:inputType="textMultiLine"/>
+				
+				<Button
+						android:id="@+id/btn_select_messages"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="选择消息" />
+			
+			
+			<TextView
+					android:id="@+id/tv_selected_message_ids"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="已选择的消息ID: 无"
+					android:textSize="12sp"
+					android:textColor="#666666"
+					android:layout_marginTop="4dp" />
+		
+		</LinearLayout>
+		
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 只查询本地数据库"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 需要提供消息客户端ID列表"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• ID列表不能为空"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

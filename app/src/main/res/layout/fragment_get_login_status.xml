@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="获取登录状态:"
+				android:textStyle="bold"
+				android:textSize="16sp"
+				android:padding="8dp" />
+		
+		
+		<!-- 状态指示器区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f8f9fa"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="状态指示器:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical"
+						android:gravity="center">
+					
+					<View
+							android:id="@+id/indicator_logout"
+							android:layout_width="20dp"
+							android:layout_height="20dp"
+							android:background="@android:color/darker_gray" />
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="LOGOUT"
+							android:textSize="10sp"
+							android:layout_marginTop="2dp" />
+				
+				</LinearLayout>
+				
+				<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical"
+						android:gravity="center">
+					
+					<View
+							android:id="@+id/indicator_logined"
+							android:layout_width="20dp"
+							android:layout_height="20dp"
+							android:background="@android:color/darker_gray" />
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="LOGINED"
+							android:textSize="10sp"
+							android:layout_marginTop="2dp" />
+				
+				</LinearLayout>
+				
+				<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical"
+						android:gravity="center">
+					
+					<View
+							android:id="@+id/indicator_logining"
+							android:layout_width="20dp"
+							android:layout_height="20dp"
+							android:background="@android:color/darker_gray" />
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="LOGINING"
+							android:textSize="10sp"
+							android:layout_marginTop="2dp" />
+				
+				</LinearLayout>
+				
+				<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical"
+						android:gravity="center">
+					
+					<View
+							android:id="@+id/indicator_unlogin"
+							android:layout_width="20dp"
+							android:layout_height="20dp"
+							android:background="@android:color/darker_gray" />
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="UNLOGIN"
+							android:textSize="10sp"
+							android:layout_marginTop="2dp" />
+				
+				</LinearLayout>
+			
+			</LinearLayout>
+		
+		</LinearLayout>
+		
+		
+		<!-- 接口说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="接口说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 方法名: getLoginStatus()"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 参数: 无参数"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 返回类型: V2NIMLoginStatus"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 功能: 获取当前登录状态"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 特点: 同步方法，立即返回结果"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+		
+		<!-- 枚举值说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f8d7da"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="V2NIMLoginStatus 枚举值:"
+					android:textStyle="bold"
+					android:textSize="14sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• LOGOUT(0): 登出状态，需要调用login接口"
+					android:textSize="12sp"
+					android:textColor="#721c24"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• LOGINED(1): 已登录，可正常使用IM功能"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• LOGINING(2): 登录中，正在连接和鉴权"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• UNLOGIN(3): 未登录但在重试，SDK会自动登录"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

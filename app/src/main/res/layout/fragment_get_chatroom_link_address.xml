@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="获取聊天室link地址:"
+				android:textStyle="bold"
+				android:textSize="16sp"
+				android:padding="8dp" />
+		
+		<!-- 参数输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e3f2fd"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数设置:"
+					android:textStyle="bold"
+					android:textSize="14sp"
+					android:textColor="#1976d2" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp"
+					android:gravity="center_vertical">
+				
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="聊天室ID:"
+						android:textSize="14sp"
+						android:textColor="#1976d2"
+						android:minWidth="80dp" />
+				
+				<EditText
+						android:id="@+id/et_room_id"
+						android:layout_width="0dp"
+						android:layout_height="48dp"
+						android:layout_weight="1"
+						android:hint="请输入聊天室ID"
+						android:textSize="14sp"
+						android:background="@android:color/white"
+						android:padding="8dp"
+						android:layout_marginStart="8dp"
+						android:layout_marginEnd="8dp"
+						android:inputType="text"
+						android:singleLine="true" />
+				
+				<Button
+						android:id="@+id/btn_clear_input"
+						android:layout_width="wrap_content"
+						android:layout_height="36dp"
+						android:text="清空"
+						android:textSize="12sp"
+						android:textAllCaps="false"
+						android:minWidth="60dp" />
+			
+			</LinearLayout>
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="提示: 请输入有效的聊天室ID，需要IM处于登录状态"
+					android:textSize="11sp"
+					android:textColor="#1976d2"
+					android:textStyle="italic"
+					android:layout_marginTop="4dp" />
+		
+		</LinearLayout>
+		
+		<!-- 当前状态显示区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="当前状态:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:id="@+id/tv_current_login_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="正在获取登录状态..."
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:id="@+id/tv_current_login_user"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="正在获取登录用户..."
+					android:textSize="12sp"
+					android:layout_marginTop="2dp" />
+			
+			<TextView
+					android:id="@+id/tv_status_tip"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="提示信息..."
+					android:textSize="11sp"
+					android:layout_marginTop="4dp"
+					android:textStyle="italic" />
+			
+			<Button
+					android:id="@+id/btn_refresh_status"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="刷新状态"
+					android:textSize="12sp"
+					android:textAllCaps="false"
+					android:layout_marginEnd="8dp" />
+		
+		</LinearLayout>
+		
+		<!-- 请求状态区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f8f9fa"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="请求状态:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:id="@+id/tv_request_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="准备就绪，请输入聊天室ID并点击请求按钮"
+					android:textSize="12sp"
+					android:textColor="#495057"
+					android:layout_marginTop="4dp" />
+			
+			<Button
+					android:id="@+id/btn_clear_status"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="清空状态显示"
+					android:textSize="12sp"
+					android:textAllCaps="false"
+					android:layout_marginTop="8dp" />
+		
+		</LinearLayout>
+		
+		<!-- 聊天室Link地址信息区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#ffffff"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="聊天室Link地址信息:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:layout_marginTop="8dp">
+				
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:layout_marginBottom="8dp">
+					
+					<TextView
+							android:layout_width="120dp"
+							android:layout_height="wrap_content"
+							android:text="聊天室ID:"
+							android:textSize="12sp"
+							android:textColor="#666666"
+							android:textStyle="bold" />
+					
+					<TextView
+							android:id="@+id/tv_request_room_id"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:text="--"
+							android:textSize="12sp"
+							android:textStyle="bold" />
+				
+				</LinearLayout>
+				
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:layout_marginBottom="8dp">
+					
+					<TextView
+							android:layout_width="120dp"
+							android:layout_height="wrap_content"
+							android:text="地址数量:"
+							android:textSize="12sp"
+							android:textColor="#666666"
+							android:textStyle="bold" />
+					
+					<TextView
+							android:id="@+id/tv_address_count"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:text="--"
+							android:textSize="12sp" />
+				
+				</LinearLayout>
+				
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:layout_marginBottom="8dp">
+					
+					<TextView
+							android:layout_width="120dp"
+							android:layout_height="wrap_content"
+							android:text="请求状态:"
+							android:textSize="12sp"
+							android:textColor="#666666"
+							android:textStyle="bold" />
+					
+					<TextView
+							android:id="@+id/tv_operation_status"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:text="--"
+							android:textSize="12sp" />
+				
+				</LinearLayout>
+				
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="120dp"
+							android:layout_height="wrap_content"
+							android:text="地址列表:"
+							android:textSize="12sp"
+							android:textColor="#666666"
+							android:textStyle="bold" />
+					
+					<TextView
+							android:id="@+id/tv_address_list"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:text="--"
+							android:textSize="12sp"
+							android:maxLines="10" />
+				
+				</LinearLayout>
+			
+			</LinearLayout>
+		
+		</LinearLayout>
+		
+		<!-- 接口说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="接口说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 方法名: getChatroomLinkAddress()"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 参数: String roomId（聊天室ID）"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 返回类型: void（异步回调）"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 成功回调: V2NIMSuccessCallback&lt;List&lt;String&gt;&gt;"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 失败回调: V2NIMFailureCallback"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 功能: 获取指定聊天室的link地址列表"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 特点: 异步方法，通过回调返回结果"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 前提: 需要IM处于登录状态"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+		
+		<!-- 使用场景区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f8d7da"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="使用场景:"
+					android:textStyle="bold"
+					android:textSize="14sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 获取聊天室连接地址"
+					android:textSize="12sp"
+					android:textColor="#721c24"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 聊天室连接前的地址获取"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 聊天室服务器地址配置"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 聊天室网络连接优化"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 聊天室负载均衡支持"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+		
+		</LinearLayout>
+		
+		<!-- 注意事项区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3cd"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="注意事项:"
+					android:textStyle="bold"
+					android:textSize="14sp"
+					android:textColor="#856404" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 必须在IM登录状态下调用"
+					android:textSize="12sp"
+					android:textColor="#856404"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 聊天室ID不能为空或无效"
+					android:textSize="12sp"
+					android:textColor="#856404" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 返回的地址列表可能为空"
+					android:textSize="12sp"
+					android:textColor="#856404" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 网络异常时会触发失败回调"
+					android:textSize="12sp"
+					android:textColor="#856404" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

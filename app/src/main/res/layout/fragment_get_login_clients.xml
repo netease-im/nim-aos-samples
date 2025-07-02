@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="获取登录客户端列表:"
+				android:textStyle="bold"
+				android:textSize="16sp"
+				android:padding="8dp" />
+		
+		<!-- 登录状态显示区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="当前登录状态:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:id="@+id/tv_login_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="正在获取登录状态..."
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:id="@+id/tv_login_user"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="正在获取登录用户..."
+					android:textSize="12sp"
+					android:layout_marginTop="2dp" />
+			
+			<TextView
+					android:id="@+id/tv_login_tip"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="提示信息..."
+					android:textSize="11sp"
+					android:layout_marginTop="4dp"
+					android:textStyle="italic" />
+			
+			<Button
+					android:id="@+id/btn_refresh_login_status"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="刷新状态"
+					android:textSize="12sp"
+					android:textAllCaps="false"
+					android:layout_marginTop="8dp" />
+		
+		</LinearLayout>
+		
+		<!-- 客户端列表统计区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f8f9fa"
+				android:padding="12dp">
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+				
+				<TextView
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="其他登录端:"
+						android:textStyle="bold"
+						android:textSize="14sp" />
+				
+				<TextView
+						android:id="@+id/tv_client_count"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="客户端数量: --"
+						android:textSize="12sp"
+						android:textStyle="bold" />
+			
+			</LinearLayout>
+			
+			<Button
+					android:id="@+id/btn_clear_list"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="清空列表"
+					android:textSize="12sp"
+					android:textAllCaps="false" />
+			
+			<TextView
+					android:id="@+id/tv_quick_check_result"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="点击上方'快速检测'按钮进行检测"
+					android:textSize="11sp"
+					android:textColor="#666666"
+					android:layout_marginTop="4dp" />
+		
+		</LinearLayout>
+		
+		<!-- 客户端列表区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#ffffff"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="客户端列表:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:id="@+id/tv_empty_tip"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="暂无其他端登录信息"
+					android:textSize="12sp"
+					android:textColor="#666666"
+					android:layout_marginTop="8dp"
+					android:gravity="center"
+					android:padding="16dp"
+					android:visibility="visible" />
+			
+			<androidx.recyclerview.widget.RecyclerView
+					android:id="@+id/recycler_view_clients"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					android:visibility="gone"
+					tools:listitem="@layout/item_login_client" />
+		
+		</LinearLayout>
+		
+		<!-- 接口说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="接口说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 方法名: getLoginClients()"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 参数: 无参数"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 返回类型: List&lt;V2NIMLoginClient&gt;"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 功能: 获取登录客户端列表（不包含当前端）"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 特点: 同步方法，立即返回结果"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 说明: 返回的列表不包含当前登录端信息"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+		
+		<!-- 使用场景区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f8d7da"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="使用场景:"
+					android:textStyle="bold"
+					android:textSize="14sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 查看同一账号在其他设备的登录情况"
+					android:textSize="12sp"
+					android:textColor="#721c24"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 多端登录管理和监控"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 安全监控，检查异常登录"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 踢除其他端登录功能的前置检查"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

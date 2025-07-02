@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="删除好友:" />
+		
+		<!-- 用户账号输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="8dp">
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="删除好友时是否删除好友昵称"
+				android:textStyle="bold" />
+
+			<RadioGroup
+				android:id="@+id/rg_conversation_type"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:layout_marginTop="4dp">
+
+				<RadioButton
+					android:id="@+id/rb_delete_alias"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="同时删除好友昵称"
+					android:checked="true" />
+
+				<RadioButton
+					android:id="@+id/rb_keep_alias"
+					android:layout_width="wrap_content"
+					android:layout_height="60dp"
+					android:text="不删除好友昵称"
+					android:layout_marginStart="16dp" />
+			</RadioGroup>
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="用户账号ID:"
+					android:textStyle="bold" />
+			
+			<EditText
+					android:id="@+id/edt_account_ids"
+					android:layout_width="match_parent"
+					android:layout_height="60dp"
+					android:hint="请输入用户账号ID，必填"
+					android:inputType="textMultiLine"
+					android:gravity="top"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp" />
+
+		</LinearLayout>
+		
+
+
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数说明:请求添加好友的账号ID，对方会收到好友申请"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

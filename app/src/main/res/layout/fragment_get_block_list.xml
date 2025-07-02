@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="获取黑名单列表:" />
+		
+		<!-- 操作说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="8dp"
+				android:background="#fff8e1"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="操作说明:"
+					android:textStyle="bold"
+					android:textSize="16sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="📋 此接口无需任何参数，直接获取当前用户的黑名单列表"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="🚫 返回所有被屏蔽的用户账号"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="⚡ 实时获取最新的黑名单状态"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+		
+		<!-- 请求状态预览区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#ffebee"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="请求状态预览:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_request_preview"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="🚫 准备获取黑名单列表"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 参数验证区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3cd"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数验证:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_validation_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="✓ 无需参数验证，可以直接获取黑名单"
+					android:textSize="12sp"
+					android:textColor="#157347"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 黑名单预览区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="黑名单预览:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_block_list_preview"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="暂未获取黑名单数据"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp"
+					android:maxLines="10"
+					android:ellipsize="end" />
+		</LinearLayout>
+		
+		<!-- 统计信息区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e3f2fd"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="统计信息:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_statistics_info"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="📊 黑名单用户数量: 未知"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 功能说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fce4ec"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="黑名单功能说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 📋 获取当前账号的完整黑名单列表"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 🚫 列表包含所有被屏蔽的用户账号"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• ⚡ 实时反映最新的黑名单状态"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 🔄 支持实时更新和状态同步"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+		
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• getBlockList(): 获取黑名单列表，无需参数"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• success: 获取成功回调，返回ListString黑名单账号列表"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• failure: 获取失败回调，返回错误信息"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 返回的是纯账号字符串列表，不包含用户详细信息"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

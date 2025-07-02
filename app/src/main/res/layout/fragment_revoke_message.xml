@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="待撤回消息:" />
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="会话ID:" />
+			
+			<EditText
+					android:id="@+id/et_conversation_id"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1" />
+			
+			<Button
+					android:id="@+id/btn_get_conversation"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="选择会话"
+			/>
+		
+		</LinearLayout>
+		
+		<Button
+				android:id="@+id/btn_select_msg"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="10dp"
+				android:layout_weight="1"
+				android:text="选择撤回消息" />
+		
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="撤回消息Json: " />
+		
+		<TextView
+				android:id="@+id/tv_reply_msg"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="10dp"
+				android:text="null" />
+		
+		
+		<!-- V2NIMMessageRevokeParams -->
+		<!-- Revoke Params -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			
+			<CheckBox
+					android:id="@+id/cb_revoke_params"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="撤回参数配置" />
+			
+			<LinearLayout
+					android:id="@+id/ll_revoke_params"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:visibility="gone"
+					tools:visibility="visible">
+				
+				<!-- postscript -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="postscript:" />
+					
+					<EditText
+							android:id="@+id/edt_postscript"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入附言" />
+				</LinearLayout>
+				
+				<!-- serverExtension -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="serverExtension:" />
+					
+					<EditText
+							android:id="@+id/edt_server_extension"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入扩展信息" />
+				</LinearLayout>
+				
+				<!-- pushContent -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="pushContent:" />
+					
+					<EditText
+							android:id="@+id/edt_push_content"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入推送文案" />
+				</LinearLayout>
+				
+				<!-- pushPayload -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="pushPayload:" />
+					
+					<EditText
+							android:id="@+id/edt_push_payload"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入推送数据" />
+				</LinearLayout>
+				
+				<!-- env -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="env:" />
+					
+					<EditText
+							android:id="@+id/edt_env"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入路由抄送地址（如 production）" />
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

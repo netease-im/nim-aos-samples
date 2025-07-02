@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="查询好友列表获:" />
+		
+		<!-- 用户账号输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="用户账号列表:"
+					android:textStyle="bold" />
+			
+			<EditText
+					android:id="@+id/edt_account_ids"
+					android:layout_width="match_parent"
+					android:layout_height="120dp"
+					android:hint="请输入用户账号，多个账号用逗号分隔&#10;例如：&#10;user001,user002,user003&#10;&#10;注意：单次最大查询150个用户"
+					android:inputType="textMultiLine"
+					android:gravity="top"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:id="@+id/tv_ids_count"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="当前输入账号数量: 0个"
+					android:textSize="12sp"
+					android:textColor="#666666"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 快速操作区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f0f0f0"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="快速操作:"
+					android:textStyle="bold" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<Button
+						android:id="@+id/btn_clear_ids"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="清空"
+						android:textSize="12sp" />
+				
+				<Button
+						android:id="@+id/btn_add_test_ids"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="添加测试账号"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+			
+			</LinearLayout>
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="提示：可以手动输入用户账号，或点击添加测试账号"
+					android:textSize="11sp"
+					android:textColor="#888888"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 账号列表预览区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="账号列表预览:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_ids_preview"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="暂无账号"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp"
+					android:maxLines="5"
+					android:ellipsize="end" />
+		</LinearLayout>
+		
+		<!-- 参数验证区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3cd"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数验证:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_validation_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="✗ 用户账号列表不能为空"
+					android:textSize="12sp"
+					android:textColor="#d63384"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• accountIds: 用户账号列表，不能为空"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 单次最大查询150个用户账号"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 只返回ID存在的用户，错误ID不返回"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

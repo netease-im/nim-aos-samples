@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="添加登录详情监听器:"
+				android:textStyle="bold"
+				android:textSize="16sp" />
+		
+		<!-- 监听器状态区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e3f2fd"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="全局监听器状态:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:id="@+id/tv_listener_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="● 未添加监听器"
+					android:textSize="13sp"
+					android:textColor="#f44336"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:id="@+id/tv_listener_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="监听时长: 00:00:00"
+					android:textSize="12sp"
+					android:textColor="#666666"
+					android:layout_marginTop="2dp" />
+			
+		</LinearLayout>
+		
+		
+		<!-- 历史记录统计区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f3e5f5"
+				android:padding="12dp">
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+				
+				<TextView
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="历史记录统计:"
+						android:textStyle="bold"
+						android:textSize="14sp" />
+				
+				<Button
+						android:id="@+id/btn_clear_history"
+						android:layout_width="wrap_content"
+						android:layout_height="32dp"
+						android:text="清空记录"
+						android:textSize="10sp"
+						android:minHeight="0dp"
+						android:paddingVertical="4dp" />
+			
+			</LinearLayout>
+			
+			<TextView
+					android:id="@+id/tv_callback_statistics"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="总回调次数: 0\n连接状态: 0 | 连接断开: 0 | 连接失败: 0 | 数据同步: 0"
+					android:textSize="12sp"
+					android:layout_marginTop="8dp" />
+		
+		</LinearLayout>
+		
+		<!-- 实时回调显示区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3e0"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"  
+					android:text="最新回调:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:id="@+id/tv_latest_callback"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="暂无回调"
+					android:textSize="12sp"
+					android:textColor="#757575"
+					android:layout_marginTop="4dp"
+					android:maxLines="3"
+					android:ellipsize="end" />
+		
+		</LinearLayout>
+		
+		<!-- 历史记录列表区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="12dp">
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+				
+				<TextView
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="历史记录 (最新20条):"
+						android:textStyle="bold"
+						android:textSize="14sp" />
+				
+			
+			</LinearLayout>
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					android:background="@android:color/white"
+					android:padding="8dp"
+					android:orientation="vertical">
+				
+				<TextView
+						android:id="@+id/tv_callback_history"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="暂无历史记录\n\n请先添加监听器，然后进行登录相关操作来触发回调事件"
+						android:textSize="11sp"
+						android:textColor="#666666"
+						android:lineSpacingMultiplier="1.2" />
+			
+			</LinearLayout>
+		
+		</LinearLayout>
+		
+		<!-- 触发说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="如何触发回调事件:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 网络连接变化 → 触发连接状态变更"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 网络断开异常 → 触发连接断开事件"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 连接服务器失败 → 触发连接失败事件"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 登录后数据同步 → 触发数据同步事件"
+					android:textSize="12sp" />
+			
+		
+		</LinearLayout>
+		
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="接口说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• addLoginDetailListener: 添加登录详情监听器"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 监听器提供更详细的连接状态和数据同步信息"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

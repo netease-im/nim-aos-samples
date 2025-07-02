@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="批量删除本地会话："
+				android:textSize="18sp"
+				android:textStyle="bold"/>
+		
+		<!-- 会话ID列表输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f8f8f8">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="会话ID列表:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="请输入要删除的会话ID，每行一个"
+					android:textSize="12sp"
+					android:textColor="#666666"
+					android:layout_marginTop="4dp" />
+			
+			<EditText
+					android:id="@+id/edt_conversation_ids"
+					android:layout_width="match_parent"
+					android:layout_height="120dp"
+					android:hint="请输入会话ID列表，每行一个\n例如:\naccount123|1|user456\naccount123|2|team789"
+					android:inputType="textMultiLine"
+					android:gravity="top"
+					android:background="@drawable/edittext_border"
+					android:padding="8dp"
+					android:layout_marginTop="8dp"
+					android:scrollbars="vertical" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<Button
+						android:id="@+id/btn_select_conversations"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="选择会话"
+						android:textSize="12sp" />
+				
+				<Button
+						android:id="@+id/btn_validate_ids"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="验证格式"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+				
+				<Button
+						android:id="@+id/btn_clear_ids"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="清空"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+			</LinearLayout>
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<TextView
+						android:id="@+id/tv_count"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="会话数量: 0个"
+						android:textSize="12sp"
+						android:textColor="#666666" />
+				
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="提示：可以从会话列表中批量选择，或手动输入会话ID"
+						android:textSize="11sp"
+						android:textColor="#888888"
+						android:layout_marginStart="16dp"
+						android:layout_weight="1" />
+			</LinearLayout>
+		</LinearLayout>
+		
+		<!-- ID列表预览区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="ID列表预览:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_ids_preview"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="暂无ID"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp"
+					android:maxLines="5"
+					android:ellipsize="end" />
+		</LinearLayout>
+		
+		<!-- 参数验证区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3cd"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数验证:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_validation_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="✗ 会话ID列表不能为空"
+					android:textSize="12sp"
+					android:textColor="#d63384"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 删除选项区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3cd">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="删除选项:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<CheckBox
+					android:id="@+id/cb_clear_message"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="同时删除会话消息"
+					android:layout_marginTop="8dp"
+					android:checked="false" />
+			
+			<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="• 勾选：删除所有选中会话的同时删除相关消息\n• 不勾选：仅删除会话记录，保留消息数据"
+					android:textSize="12sp"
+					android:textColor="#856404"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		
+		<!-- 接口说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#d1ecf1"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="接口说明:"
+					android:textStyle="bold"
+					android:textSize="14sp"
+					android:textColor="#0c5460" />
+			
+			<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="V2NIMLocalConversationService.deleteConversationListByIds()\n\n参数说明:\n• conversationIds: 要删除的会话ID列表\n• clearMessage: 是否同时删除会话消息\n• success: 删除成功回调，返回操作结果列表\n• failure: 删除失败回调\n\n返回结果:\nList&lt;V2NIMLocalConversationOperationResult&gt;"
+					android:textSize="12sp"
+					android:textColor="#0c5460"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

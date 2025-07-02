@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="置顶/取消置顶会话:" />
+		
+		<!-- 会话ID输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="会话ID:"
+					android:textStyle="bold" />
+			
+			<EditText
+					android:id="@+id/edt_conversation_id"
+					android:layout_width="match_parent"
+					android:layout_height="80dp"
+					android:hint="请输入会话ID&#10;例如：account123|1|user456"
+					android:inputType="textMultiLine"
+					android:gravity="top"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp"
+					android:maxLines="3" />
+			
+			<TextView
+					android:id="@+id/tv_id_status"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="当前输入状态: 无输入"
+					android:textSize="12sp"
+					android:textColor="#666666"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 快速选择区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f0f0f0"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="快速选择:"
+					android:textStyle="bold" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<Button
+						android:id="@+id/btn_select_conversation"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="选择会话"
+						android:textSize="12sp" />
+				
+				<Button
+						android:id="@+id/btn_clear_id"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="清空"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+			
+			</LinearLayout>
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="提示：可以从会话列表中选择，或手动输入会话ID"
+					android:textSize="11sp"
+					android:textColor="#888888"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 会话ID预览区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="会话ID解析:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_id_preview"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="暂无ID"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 置顶选项区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3cd"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="置顶操作:"
+					android:textStyle="bold" />
+			
+			<RadioGroup
+					android:id="@+id/rg_stick_top_option"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<RadioButton
+						android:id="@+id/rb_stick_top"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="置顶会话"
+						android:checked="true" />
+				
+				<RadioButton
+						android:id="@+id/rb_cancel_stick_top"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="取消置顶"
+						android:layout_marginStart="16dp" />
+			</RadioGroup>
+			
+			<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="• 置顶：将会话固定在列表顶部\n• 取消置顶：取消会话的置顶状态，恢复正常排序"
+					android:textSize="12sp"
+					android:textColor="#856404"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 参数验证区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3cd"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数验证:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_validation_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="✗ 会话ID不能为空"
+					android:textSize="12sp"
+					android:textColor="#d63384"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• conversationId: 会话ID，不能为空"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• stickTop: 置顶状态，true-置顶，false-取消置顶"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 置顶的会话会显示在会话列表顶部"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 操作成功后会触发会话列表更新通知"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

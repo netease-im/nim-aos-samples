@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="获取当前登录客户端信息:"
+				android:textStyle="bold"
+				android:textSize="16sp"
+				android:padding="8dp" />
+		
+		<!-- 登录状态显示区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="当前登录状态:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:id="@+id/tv_login_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="正在获取登录状态..."
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:id="@+id/tv_login_user"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="正在获取登录用户..."
+					android:textSize="12sp"
+					android:layout_marginTop="2dp" />
+			
+			<TextView
+					android:id="@+id/tv_login_tip"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="提示信息..."
+					android:textSize="11sp"
+					android:layout_marginTop="4dp"
+					android:textStyle="italic" />
+			
+			<Button
+					android:id="@+id/btn_refresh_login_status"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="刷新状态"
+					android:textSize="12sp"
+					android:textAllCaps="false"
+					android:layout_marginTop="8dp" />
+		
+		</LinearLayout>
+		
+		<!-- 客户端信息显示区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f8f9fa"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="客户端信息:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<TextView
+						android:layout_width="80dp"
+						android:layout_height="wrap_content"
+						android:text="客户端类型:"
+						android:textSize="12sp" />
+				
+				<TextView
+						android:id="@+id/tv_client_type"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="--"
+						android:textSize="12sp"
+						android:textStyle="bold" />
+			
+			</LinearLayout>
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<TextView
+						android:layout_width="80dp"
+						android:layout_height="wrap_content"
+						android:text="操作系统:"
+						android:textSize="12sp" />
+				
+				<TextView
+						android:id="@+id/tv_client_os"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="--"
+						android:textSize="12sp" />
+			
+			</LinearLayout>
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<TextView
+						android:layout_width="80dp"
+						android:layout_height="wrap_content"
+						android:text="客户端ID:"
+						android:textSize="12sp" />
+				
+				<TextView
+						android:id="@+id/tv_client_id"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="--"
+						android:textSize="12sp"
+						android:textIsSelectable="true" />
+			
+			</LinearLayout>
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<TextView
+						android:layout_width="80dp"
+						android:layout_height="wrap_content"
+						android:text="登录时间:"
+						android:textSize="12sp" />
+				
+				<TextView
+						android:id="@+id/tv_login_timestamp"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="--"
+						android:textSize="12sp" />
+			
+			</LinearLayout>
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<TextView
+						android:layout_width="80dp"
+						android:layout_height="wrap_content"
+						android:text="自定义标签:"
+						android:textSize="12sp" />
+				
+				<TextView
+						android:id="@+id/tv_custom_tag"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="--"
+						android:textSize="12sp" />
+			
+			</LinearLayout>
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<TextView
+						android:layout_width="80dp"
+						android:layout_height="wrap_content"
+						android:text="自定义类型:"
+						android:textSize="12sp" />
+				
+				<TextView
+						android:id="@+id/tv_custom_client_type"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="--"
+						android:textSize="12sp" />
+			
+			</LinearLayout>
+			
+			<Button
+					android:id="@+id/btn_clear_display"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="清空显示"
+					android:textSize="12sp"
+					android:textAllCaps="false" />
+		
+		</LinearLayout>
+		
+		<!-- 接口说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="接口说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 方法名: getCurrentLoginClient()"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 参数: 无参数"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 返回类型: V2NIMLoginClient"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 功能: 获取当前登录终端相关信息"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 特点: 同步方法，立即返回结果"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 限制: 仅在登录成功后才能获取，否则为空"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+		
+		<!-- 客户端类型说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#d1ecf1"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="V2NIMLoginClientType 类型说明:"
+					android:textStyle="bold"
+					android:textSize="14sp"
+					android:textColor="#0c5460" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• ANDROID(1): Android客户端"
+					android:textSize="12sp"
+					android:textColor="#0c5460"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• IOS(2): iOS客户端"
+					android:textSize="12sp"
+					android:textColor="#0c5460" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• PC(4): PC客户端"
+					android:textSize="12sp"
+					android:textColor="#0c5460" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• WINPHONE(8): Windows Phone客户端"
+					android:textSize="12sp"
+					android:textColor="#0c5460" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• WEB(16): Web客户端"
+					android:textSize="12sp"
+					android:textColor="#0c5460" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• RESTFUL(32): REST API客户端"
+					android:textSize="12sp"
+					android:textColor="#0c5460" />
+		
+		</LinearLayout>
+		
+		<!-- 使用场景区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f8d7da"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="使用场景:"
+					android:textStyle="bold"
+					android:textSize="14sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 识别当前登录的客户端类型"
+					android:textSize="12sp"
+					android:textColor="#721c24"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 根据客户端类型提供不同的功能"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 多端登录管理和区分"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 客户端统计和分析"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

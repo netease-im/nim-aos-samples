@@ -1,0 +1,49 @@
+package com.netease.nim.samples.localconversation.constants;
+
+public interface V2NIMLocalConversationServiceConstants {
+	String METHOD_getConversationList              = "getConversationList";
+	String METHOD_getConversationListByOption      = "getConversationListByOption";
+	String METHOD_getConversation                  = "getConversation";
+	String METHOD_getConversationListByIds         = "getConversationListByIds";
+	String METHOD_getStickTopConversationList      = "getStickTopConversationList";
+	String METHOD_createConversation               = "createConversation";
+	String METHOD_deleteConversation               = "deleteConversation";
+	String METHOD_deleteConversationListByIds      = "deleteConversationListByIds";
+	String METHOD_stickTopConversation             = "stickTopConversation";
+	String METHOD_updateConversationLocalExtension = "updateConversationLocalExtension";
+	String METHOD_getTotalUnreadCount              = "getTotalUnreadCount";
+	String METHOD_getUnreadCountByIds              = "getUnreadCountByIds";
+	String METHOD_getUnreadCountByFilter           = "getUnreadCountByFilter";
+	String METHOD_clearTotalUnreadCount            = "clearTotalUnreadCount";
+	String METHOD_clearUnreadCountByIds            = "clearUnreadCountByIds";
+	String METHOD_clearUnreadCountByTypes          = "clearUnreadCountByTypes";
+	String METHOD_subscribeUnreadCountByFilter     = "subscribeUnreadCountByFilter";
+	String METHOD_unsubscribeUnreadCountByFilter   = "unsubscribeUnreadCountByFilter";
+	String METHOD_getConversationReadTime          = "getConversationReadTime";
+	String METHOD_markConversationRead             = "markConversationRead";
+	String METHOD_addConversationListener          = "addConversationListener";
+	String METHOD_removeConversationListener       = "removeConversationListener";
+
+	String DESC_getConversationList              = "获取会话列表";
+	String DESC_getConversationListByOption      = "根据查询参数获取会话列表";
+	String DESC_getConversation                  = "获取会话列表，通过会话id";
+	String DESC_getConversationListByIds         = "根据会话id获取会话列表";
+	String DESC_getStickTopConversationList         = "查询当前全量置顶的会话列表";
+	String DESC_createConversation               = "创建会话";
+	String DESC_deleteConversation               = "删除会话";
+	String DESC_deleteConversationListByIds      = "删除会话列表";
+	String DESC_stickTopConversation             = "置顶会话";
+	String DESC_updateConversationLocalExtension = "更新会话本地扩展字段";
+	String DESC_getTotalUnreadCount              = "获取会话总未读数";
+	String DESC_getUnreadCountByIds              = "根据会话id获取会话未读数";
+	String DESC_getUnreadCountByFilter           = "根据过滤条件获取相应的未读数";
+	String DESC_clearTotalUnreadCount            = "清空会话未读数";
+	String DESC_clearUnreadCountByIds            = "根据会话id清空会话未读数";
+	String DESC_clearUnreadCountByTypes          = "根据会话类型清空相应会话的未读数";
+	String DESC_subscribeUnreadCountByFilter     = "订阅指定过滤条件的会话未读数";
+	String DESC_unsubscribeUnreadCountByFilter   = "取消订阅指定过滤条件的会话未读数";
+	String DESC_getConversationReadTime          = "获取会话已读时间戳";
+	String DESC_markConversationRead             = "标记会话已读时间戳";
+	String DESC_addConversationListener          = "添加会话监听";
+	String DESC_removeConversationListener       = "移除会话监听";
+}
