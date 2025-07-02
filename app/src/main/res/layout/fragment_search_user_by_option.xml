@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="根据关键字搜索用户信息:" />
+		
+		<!-- 搜索关键字输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="搜索关键字:"
+					android:textStyle="bold" />
+			
+			<EditText
+					android:id="@+id/edt_search_keyword"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="请输入搜索关键字&#10;例如：用户昵称、账号ID或手机号"
+					android:inputType="text"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp"
+					android:minHeight="48dp" />
+			
+			<TextView
+					android:id="@+id/tv_keyword_length"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="关键字长度: 0个字符"
+					android:textSize="12sp"
+					android:textColor="#666666"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 搜索范围设置区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="搜索范围设置:"
+					android:textStyle="bold" />
+			
+			<CheckBox
+					android:id="@+id/cb_search_name"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="搜索用户昵称 (默认)"
+					android:checked="true"
+					android:layout_marginTop="4dp" />
+			
+			<CheckBox
+					android:id="@+id/cb_search_account_id"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="搜索用户账号ID"
+					android:checked="false" />
+			
+			<CheckBox
+					android:id="@+id/cb_search_mobile"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="搜索手机号"
+					android:checked="false" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="注意：至少选择一个搜索范围，多个范围按 或 逻辑搜索"
+					android:textSize="11sp"
+					android:textColor="#888888"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 快速操作区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f0f0f0"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="快速操作:"
+					android:textStyle="bold" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<Button
+						android:id="@+id/btn_clear_keyword"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="清空关键字"
+						android:textSize="12sp" />
+				
+				<Button
+						android:id="@+id/btn_test_name_search"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="测试昵称搜索"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+				
+				<Button
+						android:id="@+id/btn_test_account_search"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="测试账号搜索"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+			
+			</LinearLayout>
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<Button
+						android:id="@+id/btn_test_mobile_search"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="测试手机搜索"
+						android:textSize="12sp" />
+				
+				<Button
+						android:id="@+id/btn_reset_scope"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="重置范围"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+			
+			</LinearLayout>
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="提示：可以手动输入关键字和选择范围，或使用测试功能"
+					android:textSize="11sp"
+					android:textColor="#888888"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 搜索选项预览区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff9c4"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="搜索选项预览:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_search_option_preview"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="搜索关键字: 空\n搜索范围: 仅昵称"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp"
+					android:maxLines="8"
+					android:ellipsize="end" />
+		</LinearLayout>
+		
+		<!-- 搜索结果预览区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#ffebee"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="搜索结果预览:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_search_result_preview"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="暂未执行搜索"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp"
+					android:maxLines="10"
+					android:ellipsize="end" />
+		</LinearLayout>
+		
+		<!-- 参数验证区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3cd"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数验证:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_validation_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="✗ 搜索关键字不能为空"
+					android:textSize="12sp"
+					android:textColor="#d63384"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 用户搜索功能说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e1f5fe"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="用户搜索功能说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 🔍 支持根据关键字搜索用户信息"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 📝 可以搜索用户昵称、账号ID、手机号"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 🔄 多个搜索范围按 或 逻辑组合"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 📊 返回匹配的用户列表信息"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+		
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• userSearchOption: 用户搜索选项参数对象"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• keyword: 搜索关键字，不能为空"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• searchName: 是否搜索用户昵称，默认true"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• searchAccountId: 是否搜索用户账号ID，默认false"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• searchMobile: 是否搜索手机号，默认false"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 注意：至少有一个搜索范围为true，否则返回参数错误"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

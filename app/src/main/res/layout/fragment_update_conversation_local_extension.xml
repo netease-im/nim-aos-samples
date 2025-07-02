@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="更新会话本地扩展字段:" />
+		
+		<!-- 会话ID输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="会话ID:"
+					android:textStyle="bold" />
+			
+			<EditText
+					android:id="@+id/edt_conversation_id"
+					android:layout_width="match_parent"
+					android:layout_height="80dp"
+					android:hint="请输入会话ID&#10;例如：account123|1|user456"
+					android:inputType="textMultiLine"
+					android:gravity="top"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp"
+					android:maxLines="3" />
+			
+			<TextView
+					android:id="@+id/tv_id_status"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="当前输入状态: 无输入"
+					android:textSize="12sp"
+					android:textColor="#666666"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 快速选择区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f0f0f0"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="快速选择:"
+					android:textStyle="bold" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<Button
+						android:id="@+id/btn_select_conversation"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="选择会话"
+						android:textSize="12sp" />
+				
+				<Button
+						android:id="@+id/btn_clear_id"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="清空ID"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+			
+			</LinearLayout>
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="提示：可以从会话列表中选择，或手动输入会话ID"
+					android:textSize="11sp"
+					android:textColor="#888888"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 会话ID预览区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="会话ID解析:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_id_preview"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="暂无ID"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 本地扩展字段输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e3f2fd"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="本地扩展字段:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="请输入JSON格式的扩展字段内容，用于存储自定义数据"
+					android:textSize="12sp"
+					android:textColor="#666666"
+					android:layout_marginTop="4dp" />
+			
+			<EditText
+					android:id="@+id/edt_local_extension"
+					android:layout_width="match_parent"
+					android:layout_height="120dp"
+					android:hint="请输入本地扩展字段内容&#10;例如：&#10;{&quot;customField&quot;:&quot;value&quot;, &quot;tag&quot;:&quot;important&quot;}&#10;&#10;可以为空，表示清空扩展字段"
+					android:inputType="textMultiLine"
+					android:gravity="top"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="8dp"
+					android:scrollbars="vertical" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<Button
+						android:id="@+id/btn_format_json"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="格式化JSON"
+						android:textSize="12sp" />
+				
+				<Button
+						android:id="@+id/btn_clear_extension"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="清空扩展"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+				
+				<Button
+						android:id="@+id/btn_example_extension"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="示例数据"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+				
+				<TextView
+						android:id="@+id/tv_extension_length"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="长度: 0"
+						android:textSize="12sp"
+						android:gravity="end"
+						android:layout_gravity="center_vertical"
+						android:textColor="#666666" />
+			</LinearLayout>
+		</LinearLayout>
+		
+		<!-- 扩展字段预览区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f3e5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="扩展字段预览:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_extension_preview"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="暂无扩展字段"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp"
+					android:maxLines="8"
+					android:ellipsize="end" />
+		</LinearLayout>
+		
+		<!-- 参数验证区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3cd"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数验证:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_validation_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="✗ 会话ID不能为空"
+					android:textSize="12sp"
+					android:textColor="#d63384"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• conversationId: 会话ID，不能为空"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• localExtension: 本地扩展字段，可以为空"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 扩展字段通常用JSON格式存储自定义数据"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 本地扩展字段仅存储在本地，不会同步到服务器"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 传入空值或null可以清空现有的扩展字段"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

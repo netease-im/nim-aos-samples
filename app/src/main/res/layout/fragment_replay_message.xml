@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<!-- 参数输入区域 -->
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:gravity="center"
+				android:orientation="horizontal">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="文件路径：" />
+			
+			<EditText
+					android:id="@+id/edt_path"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1" />
+		
+		</LinearLayout>
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+			
+			
+			<Button
+					android:id="@+id/btn_send_image"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="选图片" />
+			
+			<Button
+					android:id="@+id/btn_send_video"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="选视频" />
+			
+			
+			<Button
+					android:id="@+id/btn_send_file"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="选文件" />
+			
+			<Button
+					android:id="@+id/btn_send_audio"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="按住说话" />
+		
+		</LinearLayout>
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:gravity="center"
+				android:orientation="horizontal">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="duration:" />
+			
+			<EditText
+					android:id="@+id/edt_duration"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:hint="毫秒"
+					android:inputType="numberDecimal" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="width:" />
+			
+			<EditText
+					android:id="@+id/edt_width"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:inputType="numberDecimal" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="height:" />
+			
+			<EditText
+					android:id="@+id/edt_height"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:inputType="numberDecimal" />
+		
+		</LinearLayout>
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:gravity="center"
+				android:orientation="horizontal">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="displayName：" />
+			
+			<EditText
+					android:id="@+id/edt_display_name"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1" />
+		
+		</LinearLayout>
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:gravity="center"
+				android:orientation="horizontal">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="NOS sceneName" />
+			
+			<EditText
+					android:id="@+id/sceneName"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:hint="默认为nim_default_im" />
+			
+		
+		</LinearLayout>
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="经度" />
+			
+			<EditText
+					android:id="@+id/longitude"
+					android:layout_width="80dp"
+					android:layout_height="wrap_content"
+					android:inputType="number" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="纬度" />
+			
+			<EditText
+					android:id="@+id/latitude"
+					android:layout_width="80dp"
+					android:layout_height="wrap_content"
+					android:inputType="number" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="地址信息" />
+			
+			<EditText
+					android:id="@+id/et_adrress"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content" />
+		</LinearLayout>
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:orientation="horizontal">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="发送内容" />
+			
+			<EditText
+					android:id="@+id/message_text"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content" />
+		</LinearLayout>
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:orientation="horizontal">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="附件内容" />
+			
+			<EditText
+					android:id="@+id/message_attachment"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content" />
+		</LinearLayout>
+		
+		<LinearLayout
+				android:id="@+id/ll_message"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="消息类型" />
+			
+			<Spinner
+					android:id="@+id/spinner_message_type"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:layout_weight="1" />
+		
+		</LinearLayout>
+		
+		<Button
+				android:id="@+id/btn_create_msg"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="创建消息" />
+		
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="消息json：" />
+		<TextView
+				android:id="@+id/tv_message_json"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				tools:text="消息json" />
+		
+		
+		<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="@color/black"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp"
+		/>
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="回复消息:" />
+		
+		<LinearLayout
+				android:id="@+id/ll_reply_mode"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			
+			<LinearLayout
+					android:id="@+id/ll_session"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+				
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="会话ID:" />
+				
+				<EditText
+						android:id="@+id/et_conversation_id"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_weight="1" />
+				
+				<Button
+						android:id="@+id/btn_get_conversation"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="选择会话"
+				/>
+			
+			</LinearLayout>
+			
+			<Button
+					android:id="@+id/btn_select_msg"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="10dp"
+					android:layout_weight="1"
+					android:text="选择回复消息" />
+			
+			<LinearLayout
+					android:id="@+id/ll_reply_target"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+				
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="回复消息: " />
+				
+				<TextView
+						android:id="@+id/tv_reply_msg"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="10dp"
+						android:text="null" />
+			</LinearLayout>
+		
+		</LinearLayout>
+		
+		<!-- 新增参数设置区域 -->
+		<!-- Message Config -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			
+			<CheckBox
+					android:id="@+id/cb_message_config"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Message Config" />
+			
+			<LinearLayout
+					android:id="@+id/ll_message_config"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:visibility="gone"
+					tools:visibility="visible">
+				
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_read_receipt_enabled"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="readReceiptEnabled:"
+				/>
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_last_message_update_enabled"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="lastMessageUpdateEnabled:"
+						android:checked="true"
+				/>
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_history_enabled"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="historyEnabled:"
+						android:checked="true" />
+				
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_roaming_enabled"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="roamingEnabled:"
+						android:checked="true" />
+				
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_online_sync_enabled"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="onlineSyncEnabled:"
+						android:checked="true" />
+				
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_offline_enabled"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="offlineEnabled:"
+						android:checked="true" />
+				
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_unread_enabled"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="unreadEnabled:"
+						android:checked="true" />
+				
+			</LinearLayout>
+		</LinearLayout>
+		
+		<!-- Route Config -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			
+			<CheckBox
+					android:id="@+id/cb_route_config"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Route Config" />
+			
+			<LinearLayout
+					android:id="@+id/ll_route_config"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:visibility="gone"
+					tools:visibility="visible">
+				
+				<!-- routeEnabled -->
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_route_enabled"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="routeEnabled:"
+						android:checked="true" />
+				
+				<!-- routeEnvironment -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						>
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="routeEnvironment:" />
+					
+					<EditText
+							android:id="@+id/edt_route_environment"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入环境变量（如 production）"
+							android:inputType="text" />
+				</LinearLayout>
+			
+			</LinearLayout>
+		</LinearLayout>
+		
+		<!-- Push Config -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			
+			<CheckBox
+					android:id="@+id/cb_push_config"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="启用 Push 配置" />
+			
+			<LinearLayout
+					android:id="@+id/ll_push_config"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:visibility="gone"
+					tools:visibility="visible">
+				
+				<!-- pushEnabled -->
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_push_enabled"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="pushEnabled:"
+						android:checked="true" />
+				
+				<!-- pushNickEnabled -->
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_push_nick_enabled"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="pushNickEnabled:"
+						android:checked="true" />
+				
+				<!-- forcePush -->
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_force_push"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="forcePush:" />
+				
+				<!-- pushContent -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="pushContent:" />
+					
+					<EditText
+							android:id="@+id/edt_push_content"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入推送文案" />
+				</LinearLayout>
+				
+				<!-- pushPayload -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="pushPayload:" />
+					
+					<EditText
+							android:id="@+id/edt_push_payload"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入附加数据" />
+				</LinearLayout>
+				
+				<!-- forcePushContent -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="forcePushContent:" />
+					
+					<EditText
+							android:id="@+id/edt_force_push_content"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入强制推送文案" />
+				</LinearLayout>
+				
+				<!-- forcePushAccountIds -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="forcePushAccountIds:" />
+					
+					<EditText
+							android:id="@+id/edt_force_push_account_ids"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入逗号分隔的账号ID（如 user1,user2）"
+							android:inputType="text" />
+				</LinearLayout>
+			
+			</LinearLayout>
+		</LinearLayout>
+		
+		<!-- Antispam Config -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			
+			<CheckBox
+					android:id="@+id/cb_antispam_config"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="启用反垃圾配置" />
+			
+			<LinearLayout
+					android:id="@+id/ll_antispam_config"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:visibility="gone"
+					tools:visibility="visible">
+				
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_antispam_enabled"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="antispamEnabled:"
+						android:checked="true" />
+				
+				<!-- antispamBusinessId -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="antispamBusinessId:" />
+					
+					<EditText
+							android:id="@+id/edt_antispam_business_id"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入业务ID" />
+				</LinearLayout>
+				
+				<!-- antispamCustomMessage -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="antispamCustomMessage:" />
+					
+					<EditText
+							android:id="@+id/edt_antispam_custom_message"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="自定义消息内容(Json)"/>
+				</LinearLayout>
+				
+				<!-- antispamCheating -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="antispamCheating:" />
+					
+					<EditText
+							android:id="@+id/edt_antispam_cheating"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="反作弊数据(Json)" />
+				</LinearLayout>
+				
+				<!-- antispamExtension -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="antispamExtension:" />
+					
+					<EditText
+							android:id="@+id/edt_antispam_extension"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="扩展检测数据(Json)" />
+				</LinearLayout>
+			
+			</LinearLayout>
+		</LinearLayout>
+		
+		<!-- Robot Config -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			
+			<CheckBox
+					android:id="@+id/cb_robot_config"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="启用机器人配置" />
+			
+			<LinearLayout
+					android:id="@+id/ll_robot_config"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:visibility="gone"
+					tools:visibility="visible">
+				
+				<!-- accountId -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="accountId:" />
+					
+					<EditText
+							android:id="@+id/edt_robot_account_id"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入机器人账号ID" />
+				</LinearLayout>
+				
+				<!-- topic -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="topic:" />
+					
+					<EditText
+							android:id="@+id/edt_robot_topic"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入话题" />
+				</LinearLayout>
+				
+				<!-- function -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="function:" />
+					
+					<EditText
+							android:id="@+id/edt_robot_function"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入功能描述" />
+				</LinearLayout>
+				
+				<!-- customContent -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="customContent:" />
+					
+					<EditText
+							android:id="@+id/edt_robot_custom_content"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入自定义内容" />
+				</LinearLayout>
+			
+			</LinearLayout>
+		</LinearLayout>
+		
+		<!-- AI Config -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			
+			<CheckBox
+					android:id="@+id/cb_ai_config"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="启用AI配置" />
+			
+			<LinearLayout
+					android:id="@+id/ll_ai_config"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:visibility="gone"
+					tools:visibility="visible">
+				
+				<!-- accountId -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="accountId:" />
+					
+					<EditText
+							android:id="@+id/edt_ai_account_id"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入数字人账号ID" />
+				</LinearLayout>
+				
+				<!-- content -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="content:" />
+					
+					<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal">
+						
+						<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="msg:" />
+						
+						<EditText
+								android:id="@+id/edt_ai_content_msg"
+								android:layout_width="0dp"
+								android:layout_height="wrap_content"
+								android:layout_weight="1"
+								android:hint="请输入 content msg 内容"
+								/>
+					</LinearLayout>
+					<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal">
+						
+						<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="type:" />
+						
+						<EditText
+								android:id="@+id/edt_ai_content_type"
+								android:layout_width="0dp"
+								android:layout_height="wrap_content"
+								android:layout_weight="1"
+								android:inputType="numberDecimal"
+								android:hint="请输入 content type 内容(仅支持0)"
+						/>
+					</LinearLayout>
+				</LinearLayout>
+				
+				
+				<!-- aiStream -->
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_ai_stream"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="aiStream（是否流式响应）"
+						android:checked="false" />
+			</LinearLayout>
+		</LinearLayout>
+		
+		
+		<!-- Target Config -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			
+			<CheckBox
+					android:id="@+id/cb_target_config"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="启用目标配置" />
+			
+			<LinearLayout
+					android:id="@+id/ll_target_config"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:visibility="gone"
+					tools:visibility="visible">
+				
+				<!-- inclusive -->
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_inclusive"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="inclusive（true为指定接收者）"
+						android:checked="true" />
+				
+				<!-- receiverIds -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="receiverIds（逗号分隔）:" />
+					
+					<EditText
+							android:id="@+id/edt_receiver_ids"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="请输入逗号分隔的接收者ID（如 user1,user2）" />
+				</LinearLayout>
+				
+				<!-- newMemberVisible -->
+				<androidx.appcompat.widget.SwitchCompat
+						android:id="@+id/sw_new_member_visible"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="newMemberVisible:"
+						android:checked="false" />
+			
+			</LinearLayout>
+		</LinearLayout>
+		
+		<LinearLayout android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			<CheckBox
+					android:id="@+id/cb_clientAntispamEnabled"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="启用本地反垃圾" />
+			<EditText
+					android:id="@+id/edt_clientAntispamReplace"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="本地反垃圾命中后替换的文本" />
+		</LinearLayout>
+	
+	
+	</LinearLayout>
+
+</ScrollView>

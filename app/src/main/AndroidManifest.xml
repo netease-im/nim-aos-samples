@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+	
+	<application
+			android:allowBackup="true"
+			android:dataExtractionRules="@xml/data_extraction_rules"
+			android:fullBackupContent="@xml/backup_rules"
+			android:icon="@mipmap/ic_launcher"
+			android:label="@string/app_name"
+			android:roundIcon="@mipmap/ic_launcher_round"
+			android:supportsRtl="true"
+			android:theme="@style/AppTheme.NoActionBar"
+			android:name=".CustomApplication"
+			tools:targetApi="31">
+		<activity
+				android:exported="true"
+				android:screenOrientation="portrait"
+				android:windowSoftInputMode="adjustPan"
+				android:name=".login.LoginActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+		<activity
+				android:exported="true"
+				android:screenOrientation="portrait"
+				android:windowSoftInputMode="adjustPan"
+				android:name=".main.MainActivity">
+		</activity>
+		<activity
+				android:exported="false"
+				android:screenOrientation="portrait"
+				android:windowSoftInputMode="adjustPan"
+				android:name=".localconversation.V2NIMLocalConversationServiceActivity"/>
+		<activity
+				android:exported="false"
+				android:screenOrientation="portrait"
+				android:windowSoftInputMode="adjustPan"
+				android:name=".message.V2NIMMessageServiceActivity"
+		/>
+		<activity
+				android:exported="false"
+				android:screenOrientation="portrait"
+				android:windowSoftInputMode="adjustPan"
+				android:name="com.netease.nim.samples.friend.V2NIMFriendServiceActivity"/>
+		<activity
+				android:exported="false"
+				android:screenOrientation="portrait"
+				android:windowSoftInputMode="adjustPan"
+				android:name="com.netease.nim.samples.user.V2NIMUserServiceActivity"/>
+		<activity
+				android:exported="false"
+				android:screenOrientation="portrait"
+				android:windowSoftInputMode="adjustPan"
+				android:name=".login.V2NIMLoginServiceEntranceActivity"/>
+		<activity
+				android:exported="false"
+				android:screenOrientation="portrait"
+				android:windowSoftInputMode="adjustPan"
+				android:name=".login.V2NIMLoginServiceActivity"/>
+
+	</application>
+	
+	
+
+</manifest>

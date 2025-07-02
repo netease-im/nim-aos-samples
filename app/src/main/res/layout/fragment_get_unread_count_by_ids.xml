@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="根据会话ID获取本地会话未读数:" />
+		
+		<!-- 会话ID输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="会话ID列表:"
+					android:textStyle="bold" />
+			
+			<EditText
+					android:id="@+id/edt_conversation_ids"
+					android:layout_width="match_parent"
+					android:layout_height="120dp"
+					android:hint="请输入会话ID，多个ID用逗号或换行分隔&#10;例如：&#10;conversation_id_1,conversation_id_2&#10;或每行一个ID"
+					android:inputType="textMultiLine"
+					android:gravity="top"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:id="@+id/tv_ids_count"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="当前输入ID数量: 0个"
+					android:textSize="12sp"
+					android:textColor="#666666"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 快速选择区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f0f0f0"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="快速选择:"
+					android:textStyle="bold" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<Button
+						android:id="@+id/btn_select_conversations"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="选择会话"
+						android:textSize="12sp" />
+				
+				<Button
+						android:id="@+id/btn_clear_ids"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="清空"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+			
+			</LinearLayout>
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="提示：可以从会话列表中选择，或手动输入会话ID"
+					android:textSize="11sp"
+					android:textColor="#888888"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- ID列表预览区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="ID列表预览:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_ids_preview"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="暂无ID"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp"
+					android:maxLines="5"
+					android:ellipsize="end" />
+		</LinearLayout>
+		
+		<!-- 参数验证区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3cd"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数验证:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_validation_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="✗ 会话ID列表不能为空"
+					android:textSize="12sp"
+					android:textColor="#d63384"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• conversationIds: 会话ID列表，不能为空"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 支持批量查询多个会话的未读数总和"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 只查询本地数据库，不发起网络请求"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 返回指定会话列表的未读数总和"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

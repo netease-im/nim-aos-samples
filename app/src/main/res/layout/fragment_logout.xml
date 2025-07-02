@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="用户登出:"
+				android:textStyle="bold"
+				android:textSize="16sp"
+				android:padding="8dp" />
+		
+		<!-- 登出确认区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3cd"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="确认登出?"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="登出后将断开与服务器的连接，无法接收消息和其他实时通知。"
+					android:textSize="12sp"
+					android:textColor="#856404"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:id="@+id/tv_current_login_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="正在获取当前登录状态..."
+					android:textSize="12sp"
+					android:textColor="#495057"
+					android:layout_marginTop="8dp" />
+		
+		</LinearLayout>
+		
+		<!-- 登出状态显示区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f8f9fa"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="登出状态:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:id="@+id/tv_logout_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="准备就绪，点击请求按钮开始登出"
+					android:textSize="12sp"
+					android:textColor="#495057"
+					android:layout_marginTop="4dp" />
+		
+		</LinearLayout>
+		
+		<!-- 接口说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="接口说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 方法名: logout()"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 参数: 无需参数"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 功能: 登出当前用户，断开连接"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 影响: 停止消息接收，清理登录状态"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 返回: void (通过回调通知结果)"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+		
+		<!-- 注意事项区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f8d7da"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="注意事项:"
+					android:textStyle="bold"
+					android:textSize="14sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 登出后无法接收实时消息"
+					android:textSize="12sp"
+					android:textColor="#721c24"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 当前会话状态将被清除"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 需要重新登录才能使用IM功能"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 登出成功后将自动跳转到登录页面"
+					android:textSize="12sp"
+					android:textColor="#721c24" />
+			
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

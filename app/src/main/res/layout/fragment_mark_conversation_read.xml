@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="标记会话已读时间戳:" />
+		
+		<!-- 会话ID输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="会话ID:"
+					android:textStyle="bold" />
+			
+			<EditText
+					android:id="@+id/edt_conversation_id"
+					android:layout_width="match_parent"
+					android:layout_height="60dp"
+					android:hint="请输入要标记已读的会话ID"
+					android:inputType="text"
+					android:gravity="top"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp"
+					android:singleLine="false"
+					android:maxLines="3" />
+			
+			<TextView
+					android:id="@+id/tv_id_length"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="当前输入长度: 0个字符"
+					android:textSize="12sp"
+					android:textColor="#666666"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 快速选择区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f0f0f0"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="快速选择:"
+					android:textStyle="bold" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<Button
+						android:id="@+id/btn_select_conversation"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="选择会话"
+						android:textSize="12sp" />
+				
+				<Button
+						android:id="@+id/btn_clear_id"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="清空"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+				
+				<Button
+						android:id="@+id/btn_check_current_read_time"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="查看已读时间"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+			
+			</LinearLayout>
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="提示：可以从会话列表中选择，或手动输入会话ID"
+					android:textSize="11sp"
+					android:textColor="#888888"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- ID预览区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="会话ID解析:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_id_analysis"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="请输入会话ID"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 当前状态显示 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e6f3ff"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="当前会话状态:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_current_read_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="请先输入会话ID查看当前已读时间"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:id="@+id/tv_unread_count"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="未读数: 未知"
+					android:textSize="12sp" />
+		</LinearLayout>
+		
+		
+		<!-- 支持类型说明 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#d4edda"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="支持的会话类型:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="✓ P2P (单聊会话)"
+					android:textSize="12sp"
+					android:textColor="#28a745"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="✓ TEAM (高级群会话)"
+					android:textSize="12sp"
+					android:textColor="#28a745" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="✓ SUPER_TEAM (超大群会话)"
+					android:textSize="12sp"
+					android:textColor="#28a745" />
+		</LinearLayout>
+		
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="操作说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• conversationId: 会话ID，不能为空"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 标记指定会话为已读状态"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 返回标记已读的时间戳（Long类型）"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 操作后该会话的未读数将清零"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 影响未读数统计"
+					android:textSize="12sp"
+					android:textColor="#d63384" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

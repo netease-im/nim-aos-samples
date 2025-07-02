@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="批量删除消息:" />
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="会话ID:" />
+			
+			<EditText
+					android:id="@+id/et_conversation_id"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1" />
+			
+			<Button
+					android:id="@+id/btn_get_conversation"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="选择会话"
+			/>
+		
+		</LinearLayout>
+		
+		<!-- 消息列表选择区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="要删除的消息列表:" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+				
+				<Button
+						android:id="@+id/btn_select_messages"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="选择消息" />
+				
+				<Button
+						android:id="@+id/btn_clear_selection"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="清空选择"
+						android:layout_marginStart="8dp" />
+			
+			</LinearLayout>
+			
+			<TextView
+					android:id="@+id/tv_selected_messages"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="已选择的消息: 0条"
+					android:textSize="12sp"
+					android:textColor="#666666"
+					android:layout_marginTop="4dp"
+					android:maxLines="15"
+					android:scrollHorizontally="false"
+					android:fontFamily="monospace" />
+			
+			<TextView
+					android:id="@+id/tv_message_count_warning"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="注意: 每次最多删除50条消息"
+					android:textSize="11sp"
+					android:textColor="#ff9800"
+					android:layout_marginTop="2dp" />
+		
+		</LinearLayout>
+		
+		<!-- 删除参数设置区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="删除参数设置:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<!-- 服务端扩展字段 -->
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="服务端扩展:"
+						android:layout_gravity="center_vertical" />
+				
+				<EditText
+						android:id="@+id/et_server_extension"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:hint="可选，会多端同步"
+						android:inputType="text" />
+			
+			</LinearLayout>
+			
+			<!-- 删除范围选择 -->
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:layout_marginTop="12dp">
+				
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="删除范围:"
+						android:textStyle="bold"
+						android:textSize="13sp" />
+				
+				<RadioGroup
+						android:id="@+id/rg_delete_scope"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="4dp">
+					
+					<RadioButton
+							android:id="@+id/rb_delete_local_only"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="仅删除本地"
+							android:checked="true" />
+					
+					<RadioButton
+							android:id="@+id/rb_delete_cloud_sync"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="删除云端(多端同步)" />
+				
+				</RadioGroup>
+			
+			</LinearLayout>
+		
+		</LinearLayout>
+		
+		<!-- 批量删除说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3e0"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="批量删除说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 所有消息必须属于同一个会话"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 每次最多删除50条消息，超过50条返回参数错误"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 未发送成功的消息只能删除本地"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 不考虑部分删除失败的情况"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+		
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="接口参数说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• messages: 需要删除的消息列表"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• serverExtension: 扩展字段，会多端同步"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• onlyDeleteLocal: 是否只删除本地消息"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

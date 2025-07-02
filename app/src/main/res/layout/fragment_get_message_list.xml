@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="查询历史消息:" />
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="会话ID:" />
+			
+			<EditText
+					android:id="@+id/et_conversation_id"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1" />
+			
+			<Button
+					android:id="@+id/btn_get_conversation"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="选择会话"
+			/>
+		
+		</LinearLayout>
+		
+		<!-- V2NIMMessageListOption -->
+		<!-- Message List Option Params -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+				
+				<!-- messageTypes -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical">
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="消息类型筛选:" />
+					<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal">
+						<CheckBox
+								android:id="@+id/cb_type_text"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="文本" />
+						<CheckBox
+								android:id="@+id/cb_type_image"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="图片" />
+						<CheckBox
+								android:id="@+id/cb_type_audio"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="语音" />
+						<CheckBox
+								android:id="@+id/cb_type_video"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="视频" />
+					</LinearLayout>
+					<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal">
+						<CheckBox
+								android:id="@+id/cb_type_file"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="文件" />
+						<CheckBox
+								android:id="@+id/cb_type_location"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="位置" />
+						<CheckBox
+								android:id="@+id/cb_type_custom"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="自定义" />
+					</LinearLayout>
+				</LinearLayout>
+				
+				<!-- beginTime -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="开始时间:" />
+					
+					<EditText
+							android:id="@+id/edt_begin_time"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="时间戳(毫秒), 0为不限制"
+							android:inputType="number" />
+				</LinearLayout>
+				
+				<!-- endTime -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="结束时间:" />
+					
+					<EditText
+							android:id="@+id/edt_end_time"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="时间戳(毫秒), 0为不限制"
+							android:inputType="number" />
+				</LinearLayout>
+				
+				<!-- limit -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="查询条数:" />
+					
+					<EditText
+							android:id="@+id/edt_limit"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:hint="默认50，最大100"
+							android:inputType="number" />
+				</LinearLayout>
+				
+				<!-- anchorMessage -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="锚点消息:" />
+					
+					<Button
+							android:id="@+id/btn_select_anchor_msg"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="选择锚点消息" />
+				</LinearLayout>
+				
+				<TextView
+						android:id="@+id/tv_anchor_msg"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="null" />
+				
+				<!-- direction -->
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="查询方向:" />
+					
+					<RadioGroup
+							android:id="@+id/rg_direction"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal">
+						
+						<RadioButton
+								android:id="@+id/rb_desc"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="降序"
+								android:checked="true" />
+						
+						<RadioButton
+								android:id="@+id/rb_asc"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="升序" />
+					</RadioGroup>
+				</LinearLayout>
+				
+				<!-- strictMode -->
+				<CheckBox
+						android:id="@+id/cb_strict_mode"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="严格模式" />
+				
+				<!-- onlyQueryLocal -->
+				<CheckBox
+						android:id="@+id/cb_only_query_local"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="仅查询本地" />
+	
+	</LinearLayout>
+	
+</LinearLayout>
+
+</ScrollView>

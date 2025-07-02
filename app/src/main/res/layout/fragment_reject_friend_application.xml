@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="拒绝好友申请:"
+				android:textSize="18sp"
+				android:textStyle="bold"/>
+		
+		<!-- 会话选择区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f8f8f8"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="选择要拒绝的好友申请:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+				
+				<TextView
+						android:id="@+id/tv_select"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+					android:text="未选择好友申请"
+						android:padding="8dp" />
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:layout_marginTop="8dp">
+				<Button
+					android:id="@+id/btn_unselect"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="取消"
+					android:textSize="12sp"
+					android:layout_marginStart="8dp" />
+				<Button
+						android:id="@+id/btn_select"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="选择"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+			</LinearLayout>
+		</LinearLayout>
+		
+
+		
+		
+		<!-- 操作说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#d1ecf1"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="接口说明:"
+					android:textStyle="bold"
+					android:textSize="14sp"
+					android:textColor="#0c5460" />
+			
+			<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="V2NIMFriendService.rejectAddApplication()\n\n参数说明:\n• V2NIMFriendAddApplication application: 要删除的好友申请对象\n• success: 删除成功回调\n• failure: 删除失败回调"
+					android:textSize="12sp"
+					android:textColor="#0c5460"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

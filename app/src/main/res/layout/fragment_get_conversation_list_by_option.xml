@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="根据查询参数获取本地会话列表:" />
+		
+		<!-- 分页参数配置 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="分页参数:"
+					android:textStyle="bold" />
+			
+			<!-- offset -->
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="分页偏移:" />
+				
+				<EditText
+						android:id="@+id/edt_offset"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:hint="首次传0，后续使用返回的offset"
+						android:inputType="number"
+						android:text="0" />
+			</LinearLayout>
+			
+			<!-- limit -->
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="拉取数量:" />
+				
+				<EditText
+						android:id="@+id/edt_limit"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:hint="不建议超过100"
+						android:inputType="number"
+						android:text="50" />
+			</LinearLayout>
+		</LinearLayout>
+		
+		<!-- V2NIMLocalConversationOption 参数 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="查询选项参数:"
+					android:textStyle="bold" />
+			
+			<!-- conversationTypes -->
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:layout_marginTop="4dp">
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="会话类型筛选:" />
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					<CheckBox
+							android:id="@+id/cb_type_p2p"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="单聊" />
+					<CheckBox
+							android:id="@+id/cb_type_team"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="群聊" />
+					<CheckBox
+							android:id="@+id/cb_type_super_team"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="超大群" />
+				</LinearLayout>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="注：不选择任何类型则查询所有类型"
+						android:textSize="12sp"
+						android:textColor="#666666" />
+			</LinearLayout>
+			
+			<!-- onlyUnread -->
+			<CheckBox
+					android:id="@+id/cb_only_unread"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="仅查询包含未读的会话"
+					android:layout_marginTop="8dp" />
+		</LinearLayout>
+		
+		<!-- 分页信息显示 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f0f0f0"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="分页信息:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_page_info"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="当前偏移: 0 | 拉取数量: 50"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<Button
+						android:id="@+id/btn_first_page"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="首页"
+						android:textSize="12sp" />
+				
+				<Button
+						android:id="@+id/btn_next_page"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="下一页"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+				
+				<Button
+						android:id="@+id/btn_use_last_offset"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="使用上次偏移"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+			
+			</LinearLayout>
+		</LinearLayout>
+		
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 分页偏移：首次传0，后续拉取采用上一次返回的offset"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 拉取数量：不建议超过100"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 会话类型：为空表示查询所有类型"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 未读筛选：true表示只查询包含未读的会话"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="根据MessageRefer列表查询消息:" />
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="会话ID:" />
+			
+			<EditText
+					android:id="@+id/et_conversation_id"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1" />
+			
+			<Button
+					android:id="@+id/btn_get_conversation"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="选择会话"
+			/>
+		
+		</LinearLayout>
+		
+		<!-- MessageRefer列表输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="MessageRefer列表:" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+				
+				<Button
+						android:id="@+id/btn_select_messages"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="选择消息" />
+				
+				<Button
+						android:id="@+id/btn_add_manual_refer"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="手动添加"
+						android:layout_marginStart="8dp" />
+				
+				<Button
+						android:id="@+id/btn_clear_refers"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="清空"
+						android:layout_marginStart="8dp" />
+			
+			</LinearLayout>
+			
+			<TextView
+					android:id="@+id/tv_selected_refers_count"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="已选择的MessageRefer: 0个"
+					android:textSize="12sp"
+					android:textColor="#666666"
+					android:layout_marginTop="4dp" />
+		
+		</LinearLayout>
+		
+		<!-- 手动添加MessageRefer对话框触发区域 -->
+		<LinearLayout
+				android:id="@+id/layout_manual_refer"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone"
+				android:background="#f0f0f0"
+				android:padding="8dp"
+				android:layout_marginTop="8dp"
+				tools:visibility="visible">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="手动添加MessageRefer:"
+					android:textStyle="bold" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="发送者ID:" />
+				
+				<EditText
+						android:id="@+id/et_sender_id"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:hint="发送者账号ID"
+						android:inputType="text" />
+			
+			</LinearLayout>
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="接收者ID:" />
+				
+				<EditText
+						android:id="@+id/et_receiver_id"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:hint="接收者账号ID"
+						android:inputType="text" />
+			
+			</LinearLayout>
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="客户端消息ID:" />
+				
+				<EditText
+						android:id="@+id/et_message_client_id"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:hint="消息客户端ID"
+						android:inputType="text" />
+			
+			</LinearLayout>
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="服务端消息ID:" />
+				
+				<EditText
+						android:id="@+id/et_message_server_id"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:hint="消息服务端ID(可选)"
+						android:inputType="text" />
+			
+			</LinearLayout>
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="创建时间:" />
+				
+				<EditText
+						android:id="@+id/et_create_time"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:hint="消息创建时间戳(毫秒)"
+						android:inputType="number" />
+			
+			</LinearLayout>
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<Button
+						android:id="@+id/btn_confirm_add_refer"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="确认添加" />
+				
+				<Button
+						android:id="@+id/btn_cancel_add_refer"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="取消"
+						android:layout_marginStart="8dp" />
+			
+			</LinearLayout>
+		
+		</LinearLayout>
+		
+		<!-- MessageRefer详细列表展示区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="MessageRefer详情:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_message_refers_detail"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="暂无MessageRefer"
+					android:textSize="12sp"
+					android:fontFamily="monospace" />
+			
+		
+		</LinearLayout>
+		
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 先查询本地数据库，不存在时查询服务器"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 如果本地数据已存在，直接返回成功"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 如果本地数据不存在，从服务器查询缺失数据"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• MessageRefer列表不能为空"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="获取数据同步项:"
+				android:textStyle="bold"
+				android:textSize="16sp"
+				android:padding="8dp" />
+		
+		<!-- 登录状态显示区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="当前登录状态:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:id="@+id/tv_current_login_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="正在获取登录状态..."
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:id="@+id/tv_current_login_user"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="正在获取登录用户..."
+					android:textSize="12sp"
+					android:layout_marginTop="2dp" />
+			
+			<TextView
+					android:id="@+id/tv_status_tip"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="提示信息..."
+					android:textSize="11sp"
+					android:layout_marginTop="4dp"
+					android:textStyle="italic" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<Button
+						android:id="@+id/btn_refresh_status"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="刷新状态"
+						android:textSize="12sp"
+						android:textAllCaps="false"
+						android:layout_marginEnd="8dp" />
+			
+			</LinearLayout>
+			
+			<TextView
+					android:id="@+id/tv_quick_check_result"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="点击上方'快速检测'按钮进行检测"
+					android:textSize="11sp"
+					android:textColor="#666666"
+					android:layout_marginTop="4dp" />
+		
+		</LinearLayout>
+		
+		<!-- 数据同步详情区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f8f9fa"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="数据同步详情:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:id="@+id/tv_data_sync_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="准备就绪，点击请求按钮获取数据同步项"
+					android:textSize="12sp"
+					android:textColor="#495057"
+					android:layout_marginTop="4dp" />
+			
+			<Button
+					android:id="@+id/btn_clear_detail"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="清空详情显示"
+					android:textSize="12sp"
+					android:textAllCaps="false"
+					android:layout_marginTop="8dp" />
+		
+		</LinearLayout>
+		
+		<!-- 数据同步项列表区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#ffffff"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="数据同步项列表:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:layout_marginTop="8dp">
+				
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:layout_marginBottom="8dp">
+					
+					<TextView
+							android:layout_width="120dp"
+							android:layout_height="wrap_content"
+							android:text="同步项数量:"
+							android:textSize="12sp"
+							android:textColor="#666666"
+							android:textStyle="bold" />
+					
+					<TextView
+							android:id="@+id/tv_sync_item_count"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:text="--"
+							android:textSize="12sp"
+							android:textStyle="bold" />
+				
+				</LinearLayout>
+				
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:layout_marginBottom="8dp">
+					
+					<TextView
+							android:layout_width="120dp"
+							android:layout_height="wrap_content"
+							android:text="完成状态:"
+							android:textSize="12sp"
+							android:textColor="#666666"
+							android:textStyle="bold" />
+					
+					<TextView
+							android:id="@+id/tv_sync_completion_status"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:text="--"
+							android:textSize="12sp" />
+				
+				</LinearLayout>
+				
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:layout_marginBottom="8dp">
+					
+					<TextView
+							android:layout_width="120dp"
+							android:layout_height="wrap_content"
+							android:text="同步进度:"
+							android:textSize="12sp"
+							android:textColor="#666666"
+							android:textStyle="bold" />
+					
+					<TextView
+							android:id="@+id/tv_sync_progress"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:text="--"
+							android:textSize="12sp" />
+				
+				</LinearLayout>
+				
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+					
+					<TextView
+							android:layout_width="120dp"
+							android:layout_height="wrap_content"
+							android:text="详细信息:"
+							android:textSize="12sp"
+							android:textColor="#666666"
+							android:textStyle="bold" />
+					
+					<TextView
+							android:id="@+id/tv_sync_details"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:text="--"
+							android:textSize="12sp"
+							android:maxLines="10" />
+				
+				</LinearLayout>
+			
+			</LinearLayout>
+		
+		</LinearLayout>
+		
+		<!-- 数据同步类型说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3cd"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="数据同步类型说明:"
+					android:textStyle="bold"
+					android:textSize="14sp"
+					android:textColor="#856404" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 同步主数据 (1): 同步用户主要数据如好友、消息等"
+					android:textSize="12sp"
+					android:textColor="#856404"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 同步群组成员 (2): 同步普通群组成员信息"
+					android:textSize="12sp"
+					android:textColor="#856404" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 同步超大群组成员 (3): 同步超大群组成员信息"
+					android:textSize="12sp"
+					android:textColor="#856404" />
+		
+		</LinearLayout>
+		
+		<!-- 数据同步状态说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#d1ecf1"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="数据同步状态说明:"
+					android:textStyle="bold"
+					android:textSize="14sp"
+					android:textColor="#0c5460" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 等待同步 (1): 数据同步项等待开始同步"
+					android:textSize="12sp"
+					android:textColor="#0c5460"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 同步中 (2): 数据同步项正在进行同步"
+					android:textSize="12sp"
+					android:textColor="#0c5460" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 同步完成 (3): 数据同步项已完成同步"
+					android:textSize="12sp"
+					android:textColor="#0c5460" />
+		
+		</LinearLayout>
+		
+		<!-- 接口说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="接口说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 方法名: getDataSync()"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 参数: 无参数"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 返回类型: List&lt;V2NIMDataSyncDetail&gt;"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 功能: 获取当前数据同步项列表"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 特点: 同步方法，立即返回结果"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 说明: 返回当前所有数据同步项的状态"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+		
+		<!-- 使用场景区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#d4edda"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="使用场景:"
+					android:textStyle="bold"
+					android:textSize="14sp"
+					android:textColor="#155724" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 监控数据同步进度"
+					android:textSize="12sp"
+					android:textColor="#155724"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 显示同步状态给用户"
+					android:textSize="12sp"
+					android:textColor="#155724" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 判断数据是否同步完成"
+					android:textSize="12sp"
+					android:textColor="#155724" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 调试数据同步问题"
+					android:textSize="12sp"
+					android:textColor="#155724" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 在数据完全同步后执行操作"
+					android:textSize="12sp"
+					android:textColor="#155724" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

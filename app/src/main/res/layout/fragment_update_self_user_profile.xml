@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		
+		<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="更新自己的用户资料:" />
+		
+		<!-- 基本信息输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="8dp"
+				android:background="#f8f9fa"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="基本信息:"
+					android:textStyle="bold"
+					android:textSize="16sp" />
+			
+			<!-- 昵称 -->
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="昵称:"
+					android:textStyle="bold"
+					android:layout_marginTop="12dp" />
+			
+			<EditText
+					android:id="@+id/edt_name"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="请输入用户昵称（留空表示不修改）"
+					android:inputType="text"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp" />
+			
+			<!-- 头像 -->
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="头像URL:"
+					android:textStyle="bold"
+					android:layout_marginTop="12dp" />
+			
+			<EditText
+					android:id="@+id/edt_avatar"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="请输入头像图片地址（最大1024字节）"
+					android:inputType="textUri"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp" />
+			
+			<!-- 个性签名 -->
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="个性签名:"
+					android:textStyle="bold"
+					android:layout_marginTop="12dp" />
+			
+			<EditText
+					android:id="@+id/edt_sign"
+					android:layout_width="match_parent"
+					android:layout_height="80dp"
+					android:hint="请输入个性签名（最大256字符）"
+					android:inputType="textMultiLine"
+					android:gravity="top"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp" />
+		
+		</LinearLayout>
+		
+		<!-- 联系信息输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f0f8ff"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="联系信息:"
+					android:textStyle="bold"
+					android:textSize="16sp" />
+			
+			<!-- 邮箱 -->
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="邮箱:"
+					android:textStyle="bold"
+					android:layout_marginTop="12dp" />
+			
+			<EditText
+					android:id="@+id/edt_email"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="请输入邮箱地址（最大64字符）"
+					android:inputType="textEmailAddress"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp" />
+			
+			<!-- 手机号 -->
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="手机号:"
+					android:textStyle="bold"
+					android:layout_marginTop="12dp" />
+			
+			<EditText
+					android:id="@+id/edt_mobile"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="请输入手机号（最大32字符）&#10;非中国大陆手机号需加国家/地区代码"
+					android:inputType="phone"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp" />
+		
+		</LinearLayout>
+		
+		<!-- 个人信息输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f0fff0"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="个人信息:"
+					android:textStyle="bold"
+					android:textSize="16sp" />
+			
+			<!-- 生日 -->
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="生日:"
+					android:textStyle="bold"
+					android:layout_marginTop="12dp" />
+			
+			<EditText
+					android:id="@+id/edt_birthday"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="请输入生日（格式：1990-01-01，最大16字符）"
+					android:inputType="date"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp" />
+			
+			<!-- 性别 -->
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="性别:"
+					android:textStyle="bold"
+					android:layout_marginTop="12dp" />
+			
+			<RadioGroup
+					android:id="@+id/rg_gender"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="4dp">
+				
+				<RadioButton
+						android:id="@+id/rb_gender_unset"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="不修改"
+						android:checked="true" />
+				
+				<RadioButton
+						android:id="@+id/rb_gender_unknown"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="未知(0)"
+						android:layout_marginStart="16dp" />
+				
+				<RadioButton
+						android:id="@+id/rb_gender_male"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="男性(1)"
+						android:layout_marginStart="16dp" />
+				
+				<RadioButton
+						android:id="@+id/rb_gender_female"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="女性(2)"
+						android:layout_marginStart="16dp" />
+			
+			</RadioGroup>
+		
+		</LinearLayout>
+		
+		<!-- 扩展信息输入区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fdf5e6"
+				android:padding="12dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="扩展信息:"
+					android:textStyle="bold"
+					android:textSize="16sp" />
+			
+			<!-- 服务端扩展字段 -->
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="服务端扩展字段:"
+					android:textStyle="bold"
+					android:layout_marginTop="12dp" />
+			
+			<EditText
+					android:id="@+id/edt_server_extension"
+					android:layout_width="match_parent"
+					android:layout_height="100dp"
+					android:hint="请输入扩展字段（建议JSON格式，最大1024字符）&#10;例如：{&quot;hobby&quot;:&quot;reading&quot;,&quot;city&quot;:&quot;Beijing&quot;}"
+					android:inputType="textMultiLine"
+					android:gravity="top"
+					android:padding="8dp"
+					android:background="@drawable/edittext_border"
+					android:layout_marginTop="4dp" />
+		
+		</LinearLayout>
+		
+		<!-- 快速操作区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f0f0f0"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="快速操作:"
+					android:textStyle="bold" />
+			
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="8dp">
+				
+				<Button
+						android:id="@+id/btn_clear_all"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="清空所有"
+						android:textSize="12sp" />
+				
+				<Button
+						android:id="@+id/btn_fill_sample"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="填入示例"
+						android:textSize="12sp"
+						android:layout_marginStart="8dp" />
+			
+			</LinearLayout>
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="提示：只有非空字段才会被更新，空字段保持原值不变"
+					android:textSize="11sp"
+					android:textColor="#888888"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 参数预览区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#e8f5e8"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="更新参数预览:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_params_preview"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="暂无更新参数"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp"
+					android:maxLines="10"
+					android:ellipsize="end" />
+		</LinearLayout>
+		
+		<!-- 参数验证区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#fff3cd"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数验证:"
+					android:textStyle="bold" />
+			
+			<TextView
+					android:id="@+id/tv_validation_status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="ℹ️ 至少需要设置一个字段才能更新"
+					android:textSize="12sp"
+					android:textColor="#856404"
+					android:layout_marginTop="4dp" />
+		</LinearLayout>
+		
+		<!-- 参数说明区域 -->
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp"
+				android:background="#f5f5f5"
+				android:padding="8dp">
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="参数说明:"
+					android:textStyle="bold"
+					android:textSize="14sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• updateParams: 用户资料更新参数"
+					android:textSize="12sp"
+					android:layout_marginTop="4dp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 字段为空表示不修改该字段"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 昵称不能为空串，否则返回参数错误"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 性别当前只能设置0、1、2，其他值服务器返回错误"
+					android:textSize="12sp" />
+			
+			<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• 更新成功后SDK会抛出onUserProfileChanged回调"
+					android:textSize="12sp" />
+		
+		</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>
